@@ -1,0 +1,27 @@
+server:
+  port: 8088
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        type: trace
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:desenv
+    username: root
+    password: 558525
+jwt:
+  secret: vinigomes47
+  expiration: 604800 #milisecond = 7 days
